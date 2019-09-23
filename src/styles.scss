@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: #F2F7FA;
+    font-size: 14px;
+    font-family: lato;
+}
+
+.card {
+    border: none;
+}
+
+.card-img-top {
+    border-bottom: 1px solid #ececec;
+}
+
+.card-footer {
+    padding: 5px;
+}
+
+.card-title {
+    font-size: 1rem;
+}
