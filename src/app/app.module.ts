@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WatchComponent } from './watch/watch.component';
+import { HttpClientModule } from '@angular/common/http';
+import { YoutubeService } from './youtube.service';
+import { SafePipe } from './safe.pipe';
+
 
 export const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -14,17 +18,22 @@ export const appRoutes: Routes = [
   declarations: [
     AppComponent,
     DashboardComponent,
-    WatchComponent
+    WatchComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    HttpClientModule,
+  
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true, useHash: true } // <-- debugging purposes only
+      { enableTracing: true, useHash: false } // <-- debugging purposes only
     ),
   ],
-  providers: [],
+  providers: [
+    YoutubeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
